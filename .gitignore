@@ -11,6 +11,7 @@ application.properties
 echo "azim_ssh_key" >> .gitignore
 echo "azim_ssh_key.pub" >> .gitignore
 
+
 ### STS ###
 .apt_generated
 .classpath
