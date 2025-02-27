@@ -5,8 +5,10 @@ import com.project.Budget_Tracker.Model.Users;
 import com.project.Budget_Tracker.Service.ExpenseService;
 import com.project.Budget_Tracker.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -32,5 +34,11 @@ public class UserController {
     @GetMapping("/expense/{description}")
     public Optional<Expenses> getExpense(@PathVariable String description){
         return expenseService.findByDescription(description);
+    }
+
+    @GetMapping("/expense/userId/{userId}")
+    public ResponseEntity<List<Expenses>> getExpenseByUserId(@PathVariable Long userId){
+        List<Expenses> expenses = expenseService.getExpenseBuUserId(userId);
+        return ResponseEntity.ok(expenses);
     }
 }
