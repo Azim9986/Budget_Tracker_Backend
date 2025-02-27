@@ -41,4 +41,9 @@ public class UserController {
         List<Expenses> expenses = expenseService.getExpenseBuUserId(userId);
         return ResponseEntity.ok(expenses);
     }
+    @GetMapping("/expense/email/{email}")
+    public ResponseEntity<List<Expenses>> getExpenseByUserEmail(@PathVariable String email){
+        List<Expenses> expenses = expenseService.getExpenseByUserEmail(email);
+        return ResponseEntity.ok(expenses);
+    }
 }

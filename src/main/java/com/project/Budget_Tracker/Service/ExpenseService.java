@@ -23,4 +23,7 @@ public class ExpenseService {
     public List<Expenses> getExpenseBuUserId(Long userId){
         return expenseRepo.findByUserId(userId);
     }
+    public List<Expenses> getExpenseByUserEmail(String email){
+        return expenseRepo.findByUserEmail(email);
+    }
 }

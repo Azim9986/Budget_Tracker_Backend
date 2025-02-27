@@ -13,4 +13,6 @@ public interface ExpenseRepo extends JpaRepository<Expenses,Long> {
     Optional<Expenses> findByDescription(String description);
 
     List<Expenses> findByUserId(Long userId);
+
+    List<Expenses> findByUserEmail(String email);
 }
